@@ -1,0 +1,263 @@
+	<!DOCTYPE html>
+	<html lang="en">
+
+	<head>
+
+	    <meta charset="utf-8">
+	    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <meta name="description" content="">
+	    <meta name="author" content="">
+
+	    <title>Detection of Suspicious Content</title>
+
+	    <!-- Bootstrap Core CSS -->
+	    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+	    <!-- Custom Fonts -->
+	    <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+	    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+	    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css">
+	    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+	    <link href="https://fonts.googleapis.com/css?family=Anton|Bowlby+One+SC|Bree+Serif|Patua+One" rel="stylesheet">
+
+	    <!-- Theme CSS -->
+	    <link href="css/grayscale.min.css" rel="stylesheet">
+		<script src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script src = 'js/firebase.js'> </script>
+	   <style type="">
+	   	input[type=text] {
+	    width: 100%;
+	    padding: 12px 20px;
+	    margin: 8px 0;
+	    box-sizing: border-box;
+	    border: 3px solid #ccc;
+	    -webkit-transition: 0.5s;
+	    transition: 0.5s;
+	    outline: none;
+	    color: #d63031;
+	    background-color: #ffffff;
+	    opacity: .8; 
+	    font-weight: bolder;
+	    margin-top: 120px;
+	}
+
+	input[type=text]:focus {
+	    border: 3px solid #555;
+	}
+	input[type="submit"] {
+	  appearance: none;
+	  opacity: .99;
+	  width:120px;
+	  background: #08c;
+	  box-shadow: inset 0 1px 2px rgba(255,255,255, .35), 0px 1px 6px rgba(0,246,255,.5);
+	  border: 1px solid #0a5378;
+	  border-radius: 4px;
+	  color: #eee;
+	  cursor: pointer;
+	  text-shadow:0px -1px 0px rgba(0,0,0,.5);
+	}
+
+	input[type="submit"]:hover {
+	  background: #08c;
+	  width:120px;
+	  border: 1px solid #0a5378;
+	  border-radius: 3px;
+	  box-shadow: inset 0px 3px 16px rgba(0,0,0,.25),0px 1px 10px rgba(255,255,255,.5),inset 0px -1px 2px rgba(255,255,255,.35);
+	  text-shadow:0px 1px 1px rgba(0,0,0,.65);
+	  -webkit-transition: all 0.40s ease-out;
+	  transition: all 0.40s ease-out;
+	}
+	/*#heading{
+		color: #eb2f06;
+		font-family: 'Bree Serif', serif;
+		font-size: 100px;
+		letter-spacing: 20px;
+		margin-top: 100px;
+		margin-bottom: -100px;
+	}*/
+
+	.eagle{
+		margin-top: 300px;
+		margin-right: 1160px;
+
+	}
+	#image{
+		margin-top: 100px;
+		margin-bottom: -120px;
+	}
+
+
+	   </style>
+
+	<script src="https://www.gstatic.com/firebasejs/5.0.3/firebase.js"></script>
+	<script>
+	  // Initialize Firebase
+	  var config = {
+	    apiKey: "AIzaSyD1zGZUKin2Y4XPO5E-XxZSDNqC4KGpxlk",
+	    authDomain: "test-75f64.firebaseapp.com",
+	    databaseURL: "https://test-75f64.firebaseio.com",
+	    projectId: "test-75f64",
+	    storageBucket: "test-75f64.appspot.com",
+	    messagingSenderId: "325411190353"
+	  };
+	  firebase.initializeApp(config);
+	</script>
+	</head>
+
+	<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+		
+	    <!-- Navigation -->
+	    <nav class="navbar navbar-custom navbar-fixed-top" role="navigation">
+	        <div class="container">
+	            <div class="navbar-header">
+	                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-main-collapse">
+	                    Menu <i class="fa fa-bars"></i>
+	                </button>
+	                <a class="navbar-brand page-scroll" href="#page-top">
+	                    <i class="fas fa-graduation-cap"></i> <span class="light">NUST</span> College of E&ME
+	                </a>
+	            </div>
+	            
+
+	            <!-- Collect the nav links, forms, and other content for toggling -->
+	            <div class="collapse navbar-collapse navbar-right navbar-main-collapse">
+	                <ul class="nav navbar-nav">
+	                    <!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+	                    <li class="hidden">
+	                        <a href="#page-top"></a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#about">About</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#download">Motivation</a>
+	                    </li>
+	                    <li>
+	                        <a class="page-scroll" href="#contact">Contact</a>
+	                    </li>
+	                </ul>
+	            </div>
+	            <!-- /.navbar-collapse -->
+	        </div>
+	        <!-- /.container -->
+	    </nav>
+			
+	    <!-- Intro Header -->
+	    <header class="intro">
+
+	        <div class="intro-body">
+	        	<div class="position_heading">
+	    		 <!-- <h1 id="heading">EAGLE</h1> -->
+	    		 <img id="image" src="name.jpg" >
+	  			 </div>
+	            <div class="container">
+	                <div class="row">
+	                    <div class="col-md-8 col-md-offset-2">
+	                    	
+	                    	
+	                    	<!-- Input TextBox -->
+			                <form id="url">
+			  					
+			  					<input type="text" placeholder="Enter URL" id="fname" name="url" >
+			  					<br>
+			  					<br>
+			  					<!-- <input type="submit" value="Submit"> -->
+			  					<a id= "pushData" class="btn btn-default btn-lg">Check</a>
+			  			
+							</form>
+
+	                    <br>
+	                    <br>
+	                        <a href="#about" class="btn btn-circle page-scroll">
+	                            <i class="fa fa-angle-double-down animated"></i>
+	                        </a>
+	                    </div>
+	                    <div class="eagle">
+	    					<img src="eagle.jpg" style="width:100px;height:100px;">
+	   					</div>
+	                </div>
+	            </div>
+	        </div>
+	        
+	    </header>
+
+	    
+	    <!-- About Section -->
+	    <section id="about" class="container content-section text-center">
+	        <div class="row">
+	            <div class="col-lg-8 col-lg-offset-2">
+	                <h2>Detection of Suspicious Content on Websites</h2>
+	                <p>To detect suspicious content on websites by crawling the website provided by URL. The working is learning based on data of suspicious websites. Windows firewall blocks or alerts the user about all unauthorized inbound or outbound connection attempts. It allows the user to control which programs can and cannot access the local network or Internet and provides the user with information about an application that makes a connection attemptbut it is not intelligent enough to accommodate user defined context. </p>
+	                	<p>In this project, we have designed an intelligent solution based on text mining. The solution is based on algorithms trained on suspicious content. If a user visits such website, our solution will block that content.</p>
+	            </div>
+	        </div>
+	    </section>
+
+	    <!-- Motivation Section -->
+	    <section id="download" class="content-section text-center">
+	        <div class="download-section">
+	            <div class="container">
+	                <div class="col-lg-8 col-lg-offset-2">
+	                    <h2>Motivation</h2>
+	                    <p>A lot of websites also called new communication channels are increasingly used by suspicious users who take advantages of this technological feat to publish illegal, suspicious contents and provocation in order to exchange data online and share ideas, anti-state, blasphemous and sectarianism that could affect the security of countries, state, society or institutions. Our project is able to detect such website and block them and prevent the user from such content.</p>
+	                    
+	                </div>
+	            </div>
+	        </div>
+	    </section>
+
+	    <!-- Contact Section -->
+	    <section id="contact" class="container content-section text-center">
+	        <div class="row">
+	            <div class="col-lg-8 col-lg-offset-2">
+	                <h2>Contact </h2>
+	                <p>Feel free to email us to provide some feedback on our project, give us suggestions or to just say hello!</p>
+
+	                <p><a href="#">naqqashshakir@gmail.com</a>
+	                </p>
+	                
+	                 <p> <i class="fas fa-user"></i> Muhammad Waqas	<i class="fas fa-user"></i> Muhammad Faisal		<i class="fas fa-user"></i> Muhammad Naqqash
+	                </p>
+	                <ul class="list-inline banner-social-buttons">
+	                    <li>
+	                        <a href="https://twitter.com" class="btn btn-default btn-lg"><i class="fab fa-twitter"></i> <span class="network-name">Twitter</span></a>
+	                    </li>
+	                    <li>
+	                        <a href="https://github.com/" class="btn btn-default btn-lg"><i class="fab fa-github"></i> <span class="network-name">Github</span></a>
+	                    </li>
+	                    <li>
+	                        <a href="https://plus.google.com/" class="btn btn-default btn-lg"><i class="fab fa-google-plus-g"></i> <span class="network-name">Google+</span></a>
+	                    </li>
+	                </ul>
+	            </div>
+	        </div>
+	    </section>
+
+	    
+
+	    <!-- Footer -->
+	    <footer>
+	        <div class="container text-center">
+	            <p>Copyright &copy; NUST COLLEGE OF E&ME 2018</p>
+	        </div>
+	    </footer>
+
+	    <!-- jQuery -->
+	    <script src="vendor/jquery/jquery.js"></script>
+
+	    <!-- Bootstrap Core JavaScript -->
+	    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
+
+	    <!-- Plugin JavaScript -->
+	    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+
+	    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
+	    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCRngKslUGJTlibkQ3FkfTxj3Xss1UlZDA&sensor=false"></script>
+
+	    <!-- Theme JavaScript -->
+	    <script src="js/grayscale.min.js"></script>
+
+	</body>
+	<script src = "js/index.js"></script>
+	</html>
